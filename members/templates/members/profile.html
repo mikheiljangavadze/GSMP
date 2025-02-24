@@ -1,0 +1,59 @@
+{% extends 'gsmp/base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <style>
+        .card {
+            border-radius: 30px; /* რბილი კიდეები */
+            border: 4px solid #e0e0e0; /* მსუბუქი საზღვარი */
+        }
+        .card-body {
+            padding-top: 1rem;
+            padding-bottom: 3rem; /* მეტი პედინგი */
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+
+    <div class="container my-5">
+        <div class="card shadow-sm">
+            <div class="card-title"> <h1 class="text-center mb-5" style="font-family: Noto Sans Georgian, serif; font-weight: 600"> {{ title }}</h1> </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" style="font-weight: bold">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-6" >
+                            <!-- ფორმის ველები -->
+                            {% for f in form %}
+                                {% if f.name == "photo" and f.value %}
+                                    <div class="container-fluid">
+                                        <ul><img src="{{ f.value.url }}" class="img-fluid rounded-circle" style="width: 200px; height: 200px;"></ul>
+                                        <input type="checkbox" name="photo-clear" id="photo-clear_id">
+                                        <label for="photo-clear_id">წაშლა</label><br>
+                                        შეცვლა:
+                                        <input type="file" name="photo" accept="image/*" id="id_photo">
+                                    </div>
+                                {% else %}
+                                    <div class="mb-3">
+                                        <label for="{{ f.id_for_label }}" class="form-label">{{ f.label }}:</label>
+                                        {{ f }}
+                                        <div class="form-error text-danger">{{ f.errors }}</div>
+                                    </div>
+                                {%  endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-6" >
+                            <a href="{% url 'members:password_change' %}" class="btn btn-link">{% blocktrans %}შეცვალე პაროლი{% endblocktrans %}</a>
+                              </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">{% trans "შეინახე" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

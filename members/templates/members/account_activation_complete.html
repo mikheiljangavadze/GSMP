@@ -1,0 +1,18 @@
+{% extends "gsmp/base.html" %}
+{% load i18n %}
+
+{% block title %}
+  <div class="container-fluid" style="justify-items: center" >
+      {% blocktrans %}Activation Email Sent{% endblocktrans %}
+
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid" style="justify-items: center" >
+    {% if user.is_authenticated %}
+    <p>{% blocktrans %}Welcome, {{ user.username }}! You have Successfully Activated the Account and Logged in!{% endblocktrans %}</p>
+    {% endif %}
+    </div>
+{% endblock %}
+

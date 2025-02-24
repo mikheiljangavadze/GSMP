@@ -1,0 +1,20 @@
+{% load i18n %}
+
+
+
+{% load static %}
+
+{% autoescape off %}
+{% blocktrans %}Hello {{ user.username }},{% endblocktrans %}
+
+{% blocktrans %}Please click the link below to activate your account:{% endblocktrans %}
+
+{% block reset_link %}
+<a href="http://{{ domain }}{% url 'members:activate' uidb64=uid token=token %}">Activate your account</a>
+{% endblock %}
+
+{% blocktrans %}If you did not register on our site, please ignore this message.
+
+Best regards,
+Your Website Team{% endblocktrans %}
+{% endautoescape %}

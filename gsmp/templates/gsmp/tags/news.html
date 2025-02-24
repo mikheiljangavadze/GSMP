@@ -1,0 +1,142 @@
+{% load gsmp_tags %}
+{% load static %}
+{% load i18n %}
+
+
+<style>
+    .news {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: #f5f5f5;
+        color: #4b4b4b;
+    }
+    .card-title{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: justify;
+        font-size: 14pt;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+    .card-text {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+         text-align: justify;
+
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+    .card-header {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 1000;
+        color: #212186;
+    }
+    .card-img-top {
+        height: 180px;
+        object-fit: cover;
+        object-position: top;
+    }
+    .card-footer{
+        display: -webkit-box;
+        font-size: small;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: justify;
+        padding: 0px;
+
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+    #cont1 {
+        padding: 0px;
+        margin: 0px;
+    }
+    #title2{
+         font-size: 12pt;
+        font-weight: 600;
+
+    }
+    #cardnews {
+        margin-bottom: 20px;
+    }
+</style>
+
+<body >
+<div style="justify-items: center;  font-family: Noto Sans Georgian, serif; !important; font-weight: 700; !important;"> <h1 style="margin: 0px">{%  translate "სიახლეები" %}</h1></div>
+
+<div class="news">
+    <div class="container" style="padding: 0px !important;" >
+        <div class="row" style="padding: 0px !important;">
+            <div class="col-md-4 col-sm-6 flex-container" style="padding: 0px !important; justify-items: center">
+                <div class="card rounded-5 shadow-lg" style="width: 26rem; height: 43rem; padding: 0px !important;" id="cardnewsmain">
+                    <div class="card-header"> {% blocktrans %}მთავარი სიახლე{% endblocktrans %}</div>
+                    <div class="card-body" style="background-color:#f5f5f5">
+                        {% if last_news.photo %}
+                            <img src="{{ last_news.photo.url }}"
+                                 style="height: 350px; object-fit: cover; object-position: top"  class="card-img-top" alt="{{ last_news.title }}">
+                        {% else %}
+                            <img src="{% static 'mp_news/img/no-image.jpeg'%}" alt="{{ post.title }}" height="201" width="300">
+                        {% endif %}
+                        <h5 class="card-title"> <a id="link1"  class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                   href="{{ last_news.get_absolute_url }}"> {{ last_news.title }} </a> </h5>
+                        <hr class="rounded">
+                        <li class="card-text" style="font-weight: lighter; font-size: 10pt; !important;"> <a id="link2" class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                  href="{{ last_news.get_absolute_url }}"> {{ last_news.content | truncatewords_html:40| safe }} </a>  </li>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container" id="cont1">
+                            <ul class="nav justify-content-around">
+                                <p id="cont1" >{{last_news.author}}  </p>
+                                <p id="cont1">|</p>
+                                <p id="cont1">{{ last_news.created_at|date:'d-m-Y'}}</p>
+
+                            </ul>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-6">
+                <div class="row" style="height: 50%">
+                    {% for news in last_news_group %}
+                        <div class="col-md-4 col-sm-6" style="width: 33%; padding: 0px !important;" id="cardnews">
+                            <div class="card  shadow-lg h-100"  style="max-width: 17rem; max-height: 23rem" >
+                                {% if news.photo %}
+                                    <img src="{{ news.photo.url }}"
+                                         style="object-fit: cover; object-position: top" class="card-img-top" alt="{{ news.title }}">
+                                {% else %}
+                                    <img src="{% static 'mp_news/img/no-image.jpeg'%}" alt="{{ post.title }}">
+                                {% endif %}
+                                <div class="card-body" style="background-color:#f5f5f5">
+                                    <h6 class="card-title" id="title2">
+                                        <a id="link1"  class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                                           href="{{ news.get_absolute_url }}"> {{  news.title }}  </a></h6>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="container" id="cont1">
+                                    <ul class="nav justify-content-around">
+                                    <p id="cont1">{{news.author}} </p> <p id="cont1">|</p>   <p id="cont1"> {{ news.created_at|date:'d-m-Y'}} </p>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

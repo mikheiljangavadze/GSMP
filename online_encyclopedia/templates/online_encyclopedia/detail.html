@@ -1,0 +1,93 @@
+{% extends 'gsmp/base.html' %}
+{% load i18n %}
+{% load gsmp_tags %}
+{% load highlight_terms %}
+{% load static %}
+{% load get_alphabet %}
+
+
+
+{% block content %}
+{# <link rel="stylesheet" href="{% static 'online_encyclopedia/css/custom_styles.css' %}">#}
+
+
+<style>
+a.encyclopedia-term {
+    color: #0056b3; /* ლურჯი ფერი */
+        text-decoration: none;
+font-weight: bold;
+border-bottom: 2px dotted #0056b3; /* ქვედა წყვეტილი ხაზი */
+transition: color 0.3s, border-bottom 0.3s;
+}
+
+a.encyclopedia-term:hover {
+    color: #ff6600; /* ნარინჯისფერი ჰოვერისთვის */
+        border-bottom: 2px solid #ff6600;
+}
+
+
+#tooltip {
+    position: absolute;
+background: rgba(0, 0, 0, 0.85);
+color: white;
+padding: 8px;
+border-radius: 5px;
+font-size: 14px;
+max-width: 350px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+display: none;
+z-index: 1000;
+pointer-events: none;
+}
+
+#tooltip.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+
+    <div class="container-fluid"  style="padding: 0px !important;">
+        <div class="row">
+            <div class="col-2">
+                                 {% with  "gsmp:resources" as site%}
+                {% include "gsmp/components/side_bar_menu.html" %}
+                {%  endwith %}
+            </div>
+            <div class="col-8"  style="background-color: #faf8fa">
+
+                <div class="row"  >
+                    <h1>{{ term.title }}</h1>
+                    <p>{{ term.definition|highlight_terms|safe }}</p>  {# ავტომატური ლინკების ჩამატება #}
+                    <a href="{% url 'online_encyclopedia:online_encyclopedia_home' %}">← უკან</a>
+                    <div id="tooltip"></div>
+                </div>
+            </div>
+            <div class="col-2">     </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="{% static 'online_encyclopedia/js/tinymce_autolink.js'%}"></script>
+    <script src="{% static 'online_encyclopedia/js/online_encyclopedia.js'%}"></script>
+    <script src="{% static 'online_encyclopedia/js/tinymce_setup.js'%}"></script>
+    <script src="{% static 'online_encyclopedia/js/tooltip.js'%}"></script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

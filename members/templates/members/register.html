@@ -1,0 +1,122 @@
+{% extends 'gsmp/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+
+    <style>
+        #flag_id_country {
+            width: 30px;
+            height: 15px;
+        }
+
+        #id_date_birth {
+            "class": 'form-control'
+        }
+    </style>
+
+    <h3 class="text-center mb-5">{% trans "რეგისტრაცია" %}</h3>
+    <div class="container-fluid p-2 justify-content-center align-items-center">
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row" style="background-color: white">
+                        <div class="col-sm-6" style="justify-items: right; padding-right: 0px">
+                            <div class="login-container p-5 bg-white rounded shadow" style="width: 600px; padding-right: 0px">
+                                {% for f in form %}
+                                    {% if  f.id_for_label in col1 %}
+                                        <p style="margin-bottom: 0px"> <label class="form-label"  style="margin-bottom: 1px" for="{{ f.id_for_label }}">
+                                            <b style="color: #d60f0f"> {% if  f.id_for_label in required_field_list %}* {% endif %}</b>
+                                            {% blocktranslate with textlabel=f.label %} {{textlabel}}: {% endblocktranslate %} </label>
+                                        <div class="input-group">
+                                            {{ f }}
+                                            {% if f.id_for_label == "id_password1" or f.id_for_label == "id_password2" %}
+                                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                            {% endif %}
+                                        </div>
+                                        </p>
+                                        <div class="form-error">{{ f.errors }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6" style="justify-items: left; padding-right: 0px">
+                            <div class="login-container p-5 bg-white rounded shadow" style="width: 600px; padding-left: 0px">
+                                {% for f in form %}
+                                    {% if  f.id_for_label in col2 %}
+                                        <p style="margin-bottom: 0px"> <label class="form-label"  style="margin-bottom: 1px" for="{{f.id_for_label }}">
+                                            {% blocktranslate with textlabel=f.label %} {{textlabel}}: {% endblocktranslate %} </label>
+                                        <div class="input-group">
+                                            {{ f }}
+                                        </div>
+                                        </p>
+                                        <div class="form-error">{{ f.errors }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center">
+                        <div> <button class="btn  btn-primary" type="submit" id="Submit_button" disabled>{% trans "რეგისტრაცია" %}</button></div>
+                    </div>
+                </div>
+                <div class="col-md-2">   </div>
+            </div>
+        </form>
+
+    </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.querySelectorAll('[id="togglePassword"]');
+            const passwordField = document.querySelectorAll('input[name="password1"], input[name="password2"]');
+            for (let i = 0; i < passwordField.length; i++) {
+                if (togglePassword && passwordField[i]) {
+                    togglePassword[i].addEventListener('click', function () {
+                        const type = passwordField[i].getAttribute('type') === 'password' ? 'text' : 'password';
+                        passwordField[i].setAttribute('type', type);
+                        togglePassword[i].innerHTML = type === 'password'
+                            ? '<i class="bi bi-eye"></i>'
+                            : '<i class="bi bi-eye-slash"></i>';
+                    });
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.getElementById("Submit_button");
+        const requiredFields = [
+            document.querySelector('input[name="first_name"]'),
+            document.querySelector('input[name="last_name"]'),
+            document.querySelector('input[name="email"]'),
+            document.querySelector('input[name="password1"]'),
+            document.querySelector('input[name="password2"]')
+        ];
+
+        function checkFields() {
+            let allFilled = requiredFields.every(field => field && field.value.trim() !== "");
+            submitButton.disabled = !allFilled;
+        }
+
+        requiredFields.forEach(field => {
+            if (field) {
+                field.addEventListener("input", checkFields);
+            }
+        });
+
+        checkFields();
+    });
+
+    </script>
+
+{% endblock %}

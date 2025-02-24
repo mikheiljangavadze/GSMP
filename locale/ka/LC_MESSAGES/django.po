@@ -1,0 +1,622 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-18 20:38+0400\n"
+"PO-Revision-Date: 2025-02-18 20:44+0000\n"
+"Last-Translator: Misha Jango <mikheil.jangavadze@tsu.ge>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: .\gsmp\models.py:18
+msgid "note"
+msgstr "note"
+
+#: .\gsmp\templates\gsmp\base.html:154
+msgid "Search..."
+msgstr "ძიება...."
+
+#: .\gsmp\templates\gsmp\base.html:164
+msgid "ჩემი პროფილი "
+msgstr "ჩემი პროფილი"
+
+#: .\gsmp\templates\gsmp\base.html:169
+msgid "გამოსვლა"
+msgstr "გამოსვლა"
+
+#: .\gsmp\templates\gsmp\base.html:173
+#: .\members\templates\members\login.html:7
+#: .\members\templates\members\login.html:38
+msgid "შესვლა"
+msgstr "შესვლა"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:30
+msgid "რას გთავაზობთ"
+msgstr "რას გთავაზობთ"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:31
+msgid ""
+"ხართ თუ არა სამედიცინო პროფესიონალი, ბიოლოგი, მეცნიერი,\n"
+"        პაციენტი ან ბიზნესით დაინტერესებული პირი, მოლეკულური დიაგნოსტიკა\n"
+"        ჯანმრთელობის დაცვის ცენტრალური ნაწილია. ტექნოლოგიების ვითარდება და  ჩნდება  ახალი მიღწევები,\n"
+"        GSMP  დაგეხმარებათ იყოთ მოლკულური პათოლოგიის ავანგარდში."
+msgstr ""
+"ხართ თუ არა სამედიცინო პროფესიონალი, ბიოლოგი, მეცნიერი,\n"
+"პაციენტი ან ბიზნესით დაინტერესებული პირი, მოლეკულური დიაგნოსტიკა\n"
+"ჯანმრთელობის დაცვის ცენტრალური ნაწილია. ტექნოლოგიების ვითარდება და ჩნდება ახალი მიღწევები,\n"
+"GSMP დაგეხმარებათ იყოთ მოლკულური პათოლოგიის ავანგარდში."
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:42
+msgid "ტრენინგი"
+msgstr "ტრენინგი"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:51
+#: .\gsmp\templatetags\gsmp_tags.py:52
+msgid "გაიდლაინები"
+msgstr "გაიდლაინები"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:55
+msgid "გაიდლაინები კლინიკურ და ლაბორატორიულ პრაქტიკაში"
+msgstr "გაიდლაინები კლინიკურ და ლაბორატორიულ პრაქტიკაში"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:62
+msgid "online ენციკლოპედია"
+msgstr "online ენციკლოპედია"
+
+#: .\gsmp\templates\gsmp\components\doforyou.html:77
+msgid "მოლეკულური პათოლოგიის ბიბლიოთეკა"
+msgstr "მოლეკულური "
+
+#: .\gsmp\templates\gsmp\footer.html:37
+msgid "მენიუ"
+msgstr "მენიუ"
+
+#: .\gsmp\templates\gsmp\footer.html:50
+msgid "კონტაქტი"
+msgstr "კონტაქტი"
+
+#: .\gsmp\templates\gsmp\tags\news.html:45 .\gsmp\templatetags\gsmp_tags.py:48
+#: .\mp_news\templates\mp_news\menu_tpl.html:7
+msgid "სიახლეები"
+msgstr "სიახლეები"
+
+#: .\gsmp\templates\gsmp\tags\news.html:52
+msgid "მთავარი სიახლე"
+msgstr "მთავარი სიახლე"
+
+#: .\gsmp\templatetags\gsmp_tags.py:24
+msgid "ჩვენს შესახებ"
+msgstr "ჩვენს შესახებ"
+
+#: .\gsmp\templatetags\gsmp_tags.py:25
+#| msgid "ჩვენს შესახებ"
+msgid "ასოციაციის შესახებ"
+msgstr "ასოციაციის შესახებ"
+
+#: .\gsmp\templatetags\gsmp_tags.py:26
+#| msgid "მეცნიერებათა დოქტორი"
+msgid "დირექტორთა საბჭო"
+msgstr "დირექტორთა საბჭო"
+
+#: .\gsmp\templatetags\gsmp_tags.py:27
+msgid "მრჩეველთა საბჭო"
+msgstr "მრჩეველთა საბჭო"
+
+#: .\gsmp\templatetags\gsmp_tags.py:28
+#| msgid "კატეგორია"
+msgid "ისტორია"
+msgstr "ისტორია"
+
+#: .\gsmp\templatetags\gsmp_tags.py:29
+#| msgid "ჩვენს შესახებ"
+msgid "ჩვენი მიზნები"
+msgstr "ჩვენი მიზნები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:32
+msgid "კომიტეტები"
+msgstr "კომიტეტები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:33
+#| msgid "საგანმანათლებო"
+msgid "საგარეო"
+msgstr "საგარეო"
+
+#: .\gsmp\templatetags\gsmp_tags.py:34
+#| msgid "მეცნიერებათა დოქტორი"
+msgid "მეცნიერების"
+msgstr "მეცნიერების"
+
+#: .\gsmp\templatetags\gsmp_tags.py:36
+#| msgid "სამუშაო აქტიობა"
+msgid "სამუშაო ჯგუფები"
+msgstr "სამუშაო ჯგუფები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:37
+msgid "ონკოჰემატოლოგია"
+msgstr "ონკოჰემატოლოგია"
+
+#: .\gsmp\templatetags\gsmp_tags.py:38
+#| msgid "პაროლი წარმატებით შეიცვალა!"
+msgid "ფარმაკოგენეტიკა"
+msgstr "ფარმაკოგენეტიკა"
+
+#: .\gsmp\templatetags\gsmp_tags.py:40 .\gsmp\templatetags\gsmp_tags.py:41
+#| msgid "სიახლეები"
+msgid "GSMP სიახლები"
+msgstr "GSMP სიახლები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:42
+#| msgid "აკადემიური ხარისხი"
+msgid "GSMP წლიური ანგარიში"
+msgstr "GSMP წლიური ანგარიში"
+
+#: .\gsmp\templatetags\gsmp_tags.py:49
+msgid "ღონისძიებები"
+msgstr "ღონისძიებები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:50
+msgid "რესურსები"
+msgstr "რესურსები"
+
+#: .\gsmp\templatetags\gsmp_tags.py:51
+msgid "Online Encyclopedia"
+msgstr "ონლაინ ენციკლოპედია"
+
+#: .\gsmp\templatetags\gsmp_tags.py:56
+msgid "წევრობა"
+msgstr "წევრობა"
+
+#: .\gsmpsite\urls.py:14
+msgid "admin/"
+msgstr "admin/"
+
+#: .\members\forms.py:13
+msgid "Georgia"
+msgstr "საქართველო"
+
+#: .\members\forms.py:13
+msgid "United Kingdom"
+msgstr "დიდი ბრიტანეთი"
+
+#: .\members\forms.py:13
+msgid "Armenia"
+msgstr "სომხეთი"
+
+#: .\members\forms.py:13
+#| msgid "Azebaijan"
+msgid "Azerbaijan"
+msgstr "აზერბაიჯანი"
+
+#: .\members\forms.py:13
+msgid "Bolivia"
+msgstr "ბოლივია"
+
+#: .\members\forms.py:13
+msgid "Germany"
+msgstr "გერმანია"
+
+#: .\members\forms.py:18
+msgid "ელ-ფოსტა"
+msgstr "ელ-ფოსტა"
+
+#: .\members\forms.py:18
+#| msgid "გამოაგზავნე ელ-ფოსტაზე"
+msgid "შეიყვანე ელ-ფოსტა"
+msgstr "შეიყვანე ელ-ფოსტა"
+
+#: .\members\forms.py:19 .\members\forms.py:28
+#| msgid "შეცვალე პაროლი"
+msgid "პაროლი"
+msgstr "პაროლი"
+
+#: .\members\forms.py:19
+#| msgid "შეცვალე პაროლი"
+msgid "შეიყვანე პაროლი"
+msgstr "შეიყვანე პაროლი"
+
+#: .\members\forms.py:29
+#| msgid "შეცვალე პაროლი"
+msgid "გაიმეორე პაროლი"
+msgstr "გაიმეორე პაროლი"
+
+#: .\members\forms.py:45 .\members\forms.py:86
+msgid "სახელი"
+msgstr "სახელი"
+
+#: .\members\forms.py:46 .\members\forms.py:87
+#| msgid "მთავარი"
+msgid "გვარი"
+msgstr "გვარი"
+
+#: .\members\forms.py:67
+#| msgid "აკადემიური ხარისხი"
+msgid "ასეთი ფოსტა არის"
+msgstr "ასეთი ფოსტა არის"
+
+#: .\members\forms.py:98
+#| msgid "შეცვალე პაროლი"
+msgid "ძველი პაროლი"
+msgstr "ძველი პაროლი"
+
+#: .\members\forms.py:99
+#| msgid "შეცვალე პაროლი"
+msgid "ახალი პაროლი"
+msgstr "ახალი პაროლი"
+
+#: .\members\forms.py:100
+#| msgid "დაგავიწყდათ პაროლი?"
+msgid "გაიმეორეთ პაროლი"
+msgstr "გაიმეორეთ პაროლი"
+
+#: .\members\models.py:8
+msgid "მამრ"
+msgstr "მამრ"
+
+#: .\members\models.py:8
+msgid "მდედრ"
+msgstr "მდედრ"
+
+#: .\members\models.py:10
+msgid "ბაკალავრი"
+msgstr "ბაკალავრი"
+
+#: .\members\models.py:11
+msgid "მაგისტრი"
+msgstr "მაგისტრი"
+
+#: .\members\models.py:12
+msgid "მეცნიერებათა დოქტორი"
+msgstr "მეცნიერებათა დოქტორი"
+
+#: .\members\models.py:16
+#| msgid "ჩემი პროფილი "
+msgid "ასისტენტი"
+msgstr "ასისტენტი"
+
+#: .\members\models.py:17
+#| msgid "ჩემი პროფილი "
+msgid "ასისტ. პროფ."
+msgstr "ასისტ. პროფ."
+
+#: .\members\models.py:18
+#| msgid "ჩემი პროფილი "
+msgid "ასოც. პროფ."
+msgstr "ასოც. პროფ."
+
+#: .\members\models.py:19
+#| msgid "ჩემი პროფილი "
+msgid "პროფესორი"
+msgstr "პროფესორი"
+
+#: .\members\models.py:20
+#| msgid "პროფლში დაბრუნება"
+msgid "პროფესორი-ემერიტუსი"
+msgstr "პროფესორი-ემერიტუსი"
+
+#: .\members\models.py:23
+msgid "კლინიკური/სამედიცინო სერვისი"
+msgstr "კლინიკური/სამედიცინო სერვისი"
+
+#: .\members\models.py:24
+msgid "კვლევა"
+msgstr "კვლევა"
+
+#: .\members\models.py:25
+msgid "ორივე - კლინიკური/კვლევითი"
+msgstr "ორივე - კლინიკური/კვლევითი"
+
+#: .\members\models.py:26
+msgid "ადმინისტრაციული"
+msgstr "ადმინისტრაციული"
+
+#: .\members\models.py:27
+msgid "ფინანსები, მარკეტინგი, გაყიდვები"
+msgstr "ფინანსები, მარკეტინგი, გაყიდვები"
+
+#: .\members\models.py:28
+msgid "საგანმანათლებო"
+msgstr "საგანმანათლებო"
+
+#: .\members\models.py:29
+msgid "სხვა"
+msgstr "სხვა"
+
+#: .\members\models.py:41
+msgid "email address"
+msgstr "ელ-ფოსტა"
+
+#: .\members\models.py:42
+msgid "first name"
+msgstr "სახელი"
+
+#: .\members\models.py:43
+msgid "last name"
+msgstr "გვარი"
+
+#: .\members\models.py:50
+msgid "ფოტო"
+msgstr "ფოტო"
+
+#: .\members\models.py:51
+msgid "დაბადების თარიღი"
+msgstr "დაბადების თარიღი"
+
+#: .\members\models.py:53
+msgid "სქესი"
+msgstr "სქესი"
+
+#: .\members\models.py:54
+msgid "country"
+msgstr "ქვეყანა"
+
+#: .\members\models.py:55
+msgid "ქალაქი"
+msgstr "ქალაქი"
+
+#: .\members\models.py:56
+msgid "მისამართი"
+msgstr "მისამართი"
+
+#: .\members\models.py:57
+#| msgid "სამუშაო აქტიობა"
+msgid "სამუშაო ადგილი"
+msgstr "სამუშაო ადგილი"
+
+#: .\members\models.py:58
+#| msgid "გამოაგზავნე ელ-ფოსტაზე"
+msgid "საფოსტო ინდექსი"
+msgstr "საფოსტო ინდექსი"
+
+#: .\members\models.py:59
+msgid "აკადემიური ხარისხი"
+msgstr "აკადემიური ხარისხი"
+
+#: .\members\models.py:60
+msgid "აკადემიური პოზიცია"
+msgstr "აკადემიური პოზიცია"
+
+#: .\members\models.py:61
+msgid "სამუშაო აქტიობა"
+msgstr "სამუშაო აქტიობა"
+
+#: .\members\templates\members\account_activation_complete.html:6
+#: .\members\templates\members\account_activation_sent.html:6
+#: .\members\templates\members\account_activation_sent.html:12
+msgid "Activation Email Sent"
+msgstr "აქტივაციის ელფოსტა გაიგზავნა"
+
+#: .\members\templates\members\account_activation_complete.html:14
+#, python-format
+msgid ""
+"Welcome, %(user.username)s! You have Successfully Activated the Account and "
+"Logged in!"
+msgstr ""
+"მოგესალმებით, %(user.username)s! თქვენ წარმატებით გაააქტიურეთ ანგარიში და "
+"შედით სისტემაში!"
+
+#: .\members\templates\members\account_activation_email.html:8
+#, python-format
+msgid "Hello %(user.username)s,"
+msgstr "გამარჯობა %(user.username)s,"
+
+#: .\members\templates\members\account_activation_email.html:10
+msgid "Please click the link below to activate your account:"
+msgstr ""
+"გთხოვთ, დააწკაპუნოთ ქვემოთ მოცემულ ბმულზე თქვენი ანგარიშის გასააქტიურებლად:"
+
+#: .\members\templates\members\account_activation_email.html:16
+msgid ""
+"If you did not register on our site, please ignore this message.\n"
+"\n"
+"Best regards,\n"
+"Your Website Team"
+msgstr ""
+"თუ არ დარეგისტრირდით ჩვენს საიტზე, გთხოვთ, უგულებელყოთ ეს შეტყობინება.\n"
+"\n"
+"საუკეთესო სურვილებით,\n"
+"თქვენი საიტის გუნდი"
+
+#: .\members\templates\members\account_activation_sent.html:13
+msgid ""
+"An activation link has been sent to your email address. Please check your "
+"inbox and click the activation link to activate your account."
+msgstr ""
+"აქტივაციის ბმული გაიგზავნა თქვენს ელ.ფოსტის მისამართზე. გთხოვთ, შეამოწმოთ "
+"თქვენი შემოსულები და დააწკაპუნეთ აქტივაციის ბმულზე თქვენი ანგარიშის "
+"გასააქტიურებლად."
+
+#: .\members\templates\members\activate-failed.html:4
+msgid "Someone went wrong with your link"
+msgstr "Someone went wrong with your link"
+
+#: .\members\templates\members\activate.html:5
+msgid "Hi"
+msgstr "გამარჯობა"
+
+#: .\members\templates\members\activate.html:7
+msgid "Please use the link below to verify your account."
+msgstr ""
+"გთხოვთ, გამოიყენოთ ქვემოთ მოცემული ბმული თქვენი ანგარიშის დასადასტურებლად."
+
+#: .\members\templates\members\login.html:42
+msgid "დაგავიწყდათ პაროლი?"
+msgstr "დაგავიწყდათ პაროლი?"
+
+#: .\members\templates\members\login.html:45
+msgid "გახდი წევრი"
+msgstr "გახდი წევრი"
+
+#: .\members\templates\members\password_change_done.html:31
+msgid "პაროლი წარმატებით შეიცვალა!"
+msgstr "პაროლი წარმატებით შეიცვალა!"
+
+#: .\members\templates\members\password_change_done.html:36
+#: .\members\templates\members\password_reset_complete.html:35
+msgid "თქვენ წარმატებით შეცვალეთ პაროლი"
+msgstr "თქვენ წარმატებით შეცვალეთ პაროლი"
+
+#: .\members\templates\members\password_change_done.html:37
+msgid "პროფლში დაბრუნება"
+msgstr "პროფლში დაბრუნება"
+
+#: .\members\templates\members\password_change_form.html:43
+#: .\members\templates\members\password_reset_confirm.html:42
+#: .\members\templates\members\profile.html:54
+msgid "შეინახე"
+msgstr "შეინახე"
+
+#: .\members\templates\members\password_reset_complete.html:29
+msgid "პაროლი შეცვლილია"
+msgstr "პაროლი შეცვლილია"
+
+#: .\members\templates\members\password_reset_complete.html:36
+msgid "სისტემაში შესვლა"
+msgstr "სისტემაში შესვლა"
+
+#: .\members\templates\members\password_reset_confirm.html:29
+msgid "შეიყვანეთ ახალი პაროლი"
+msgstr "შეიყვანეთ ახალი პაროლი"
+
+#: .\members\templates\members\password_reset_done.html:28
+msgid "   პაროლის აღდგენა"
+msgstr "პაროლის აღდგენა"
+
+#: .\members\templates\members\password_reset_done.html:30
+msgid ""
+"We’ve emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"ჩვენ გამოგიგზავნეთ ინსტრუქციები თქვენი პაროლის დასაყენებლად, თუ თქვენს მიერ "
+"შეყვანილი ელ. ფოსტის ანგარიში არსებობს. თქვენ უნდა მიიღოთ ისინი მალე."
+
+#: .\members\templates\members\password_reset_done.html:32
+msgid ""
+"If you don’t receive an email, please make sure you’ve entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"თუ ელფოსტას არ მიიღებთ, დარწმუნდით, რომ შეიყვანეთ მისამართი, რომლითაც "
+"დარეგისტრირდით და შეამოწმეთ თქვენი სპამის საქაღალდე."
+
+#: .\members\templates\members\password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+"თქვენ იღებთ ამ ელფოსტას, რადგან მოითხოვეთ პაროლის აღდგენა თქვენი "
+"მომხმარებლის ანგარიშისთვის %(site_name)s-ზე."
+
+#: .\members\templates\members\password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "გთხოვთ გადადით შემდეგ გვერდზე და აირჩიეთ ახალი პაროლი:"
+
+#: .\members\templates\members\password_reset_email.html:8
+msgid "Your username, in case you’ve forgotten:"
+msgstr "თქვენი მომხმარებლის სახელი, თუ დაგავიწყდათ:"
+
+#: .\members\templates\members\password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr "გმადლობთ ჩვენი საიტის გამოყენებისთვის!"
+
+#: .\members\templates\members\password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "%(site_name)s გუნდი"
+
+#: .\members\templates\members\password_reset_form.html:28
+msgid "პაროლის აღდგენა"
+msgstr "პაროლის აღდგენა"
+
+#: .\members\templates\members\password_reset_form.html:30
+msgid "პაროლის აღსადგენად შეიყვანეთ თქვენი ელ-ფოსტის ისამართი."
+msgstr "პაროლის აღსადგენად შეიყვანეთ თქვენი ელ-ფოსტის ისამართი."
+
+#: .\members\templates\members\password_reset_form.html:31
+msgid "ინსტრუქცია გამოგეგზავნებათ მითითებულ ელ-ფოსტზე"
+msgstr "ინსტრუქცია გამოგეგზავნებათ მითითებულ ელ-ფოსტზე"
+
+#: .\members\templates\members\password_reset_form.html:42
+msgid "გამოაგზავნე ელ-ფოსტაზე"
+msgstr "გამოაგზავნე ელ-ფოსტაზე"
+
+#: .\members\templates\members\profile.html:50
+msgid "შეცვალე პაროლი"
+msgstr "შეცვალე პაროლი"
+
+#: .\members\templates\members\register.html:18
+#: .\members\templates\members\register.html:68
+msgid "რეგისტრაცია"
+msgstr "რეგისტრაცია"
+
+#: .\members\templates\members\register.html:35
+#: .\members\templates\members\register.html:56
+#, python-format, fuzzy
+msgid " %(textlabel)s: "
+msgstr ""
+
+#: .\members\templates\members\register_done.html:7
+msgid "კეთილი იყოს თქვენი მობრძანება"
+msgstr "კეთილი იყოს თქვენი მობრძანება"
+
+#: .\members\templates\members\register_done.html:9
+msgid ""
+"თქვენ წარმატებით გაიარეთ რეგისტრაცია, საიტზე შესასვლელად გაიარეთ ავტორიზაცია"
+" "
+msgstr ""
+"თქვენ წარმატებით გაიარეთ რეგისტრაცია, საიტზე შესასვლელად გაიარეთ ავტორიზაცია"
+
+#: .\members\templates\members\register_done.html:9
+msgid "ლინკი"
+msgstr "ლინკი"
+
+#: .\members\views.py:100
+msgid "წევრის პროფილი"
+msgstr "წევრის პროფილი"
+
+#: .\mp_news\templates\mp_news\menu_tpl.html:11
+#, python-format, fuzzy
+msgid " %(texttitle)s: "
+msgstr ""
+
+#: .\mp_news\templates\mp_news\popular_posts_tpl.html:3
+msgid "ყველაზე კითხვადი"
+msgstr "ყველაზე კითხვადი"
+
+#: .\mp_news\templates\mp_news\popular_posts_tpl.html:24
+#, python-format, fuzzy
+msgid " %(texttitle)s "
+msgstr ""
+
+#: .\mp_news\templates\mp_news\single.html:25
+#: .\mp_news\templates\mp_news\single.html:55
+#, python-format, fuzzy
+msgid " %(textcat)s "
+msgstr ""
+
+#: .\mp_news\templates\mp_news\single.html:54
+msgid "კატეგორია"
+msgstr "კატეგორია"
+
+#: .\mp_news\templates\mp_news\single.html:61
+#, python-format, fuzzy
+msgid " %(tagtitle)s "
+msgstr ""
+
+#: .\mp_news\templates\mp_news\single.html:151
+#: .\mp_news\templates\mp_news\single.html:154
+msgid "ძებნა"
+msgstr "ძებნა"
+
+#~ msgid "მთავარი"
+#~ msgstr "მთავარი"

@@ -1,0 +1,89 @@
+{% load gsmp_tags %}
+{% load static %}
+
+
+
+
+<style>
+    #gsmpnews .row {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: #b2afaf;
+        color: #4b4b4b;
+
+    }
+
+    #newscard {
+        background-color: #c66fa0;
+    }
+
+    #newscard:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+
+    #gsmpnews {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: #b2afaf;
+        color: #4b4b4b;
+
+    }
+</style>
+
+<div id="gsmpnews" style="background-color: white">
+
+
+    <div class="container">
+        <h1> GSMP სიახლეები </h1>
+        <p>აქ ნახავთ ბოლო სიახლეებს, ღინისძიებებს და დაგეგმილ აქტიობებს </p>
+
+
+        <div class="row" style="align-items: center; background-color: white">
+            <div class="col-6" style="justify-content: center">
+
+                <div class="card mb-3 shadow-lg" style="width: 600px;" id="newscard">
+                    <div class="row g-0" style="height: 450px; background-color:#c3eaef;">
+                        <div class="col-md-4">
+                            <img src="{% static 'gsmp/images/doc2.jpg' %}" class="img-fluid rounded-start"
+                                 alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">სიახლე 1</h5>
+                                <p class="card-text" style="text-align: justify">This is a wider card with supporting text below as a natural lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-6">
+                <div class="card mb-3 shadow-lg" style="width: 600px;" id="newscard">
+                    <div class="row g-0" style="height: 450px; background-color:#c3eaef">
+                        <div class="col-md-4" >
+                            <img src="{% static 'gsmp/images/doc2.jpg' %}" class="img-fluid rounded-start"
+                                 alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">სიახლე 2</h5>
+                                <p class="card-text" style="text-align: justify">This is a wider card with supporting text below as a natural lead-in to
+                                    additional content. This content is a little bit longer. </p>
+                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <h1> ნახეთ მეტი </h1>
+    </div>
+   </div>

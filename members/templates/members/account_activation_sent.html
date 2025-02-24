@@ -1,0 +1,18 @@
+{% extends "gsmp/base.html" %}
+{% load i18n %}
+
+{% block title %}
+    <div class="container-fluid" style="justify-items: center" >
+        {% blocktrans %}Activation Email Sent{% endblocktrans %}
+</div>
+{% endblock %}
+
+{% block content %}
+   <div class="container-fluid" style="justify-items: center" >
+  <h2>{% blocktrans %}Activation Email Sent{% endblocktrans %}</h2>
+  <p>{% blocktrans %}An activation link has been sent to your email address. Please check your inbox and click the activation link to activate your account.{% endblocktrans %}</p>
+
+    </div>
+{% endblock %}
+
+

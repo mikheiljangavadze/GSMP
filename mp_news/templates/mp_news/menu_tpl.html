@@ -1,0 +1,15 @@
+
+{% load i18n %}
+<div class="{{ menu_class }}">
+    <ul>
+        <a href="{% url 'mp_news:newshome' %}"  class="btn btn-lg btn-outline-primary"
+           style="background-color: #40c4ff; height: 40px; width: 230px; margin-top: 4px; font-weight: bolder; font-size: medium">
+            {% trans "სიახლეები" %}  </a>
+        {% for item in categories %}
+            <a href="{{ item.get_absolute_url }}" class="btn btn-lg btn-outline-primary"  role="button"
+               style=" background-color: #40c4ff; height: 100%; width: 230px; margin-top: 5px; font-size:medium; font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
+                {% blocktranslate with texttitle=item.title %} {{texttitle}}: {% endblocktranslate %}</a>
+        {% endfor %}
+    </ul>
+</div>
+

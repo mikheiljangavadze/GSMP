@@ -1,0 +1,14 @@
+{% extends 'gsmp/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+    <div class="container-fluid" style="justify-items: center" >
+<h1>{% blocktrans %}კეთილი იყოს თქვენი მობრძანება{% endblocktrans %}</h1>
+ 
+<p >{% blocktrans %}თქვენ წარმატებით გაიარეთ რეგისტრაცია, საიტზე შესასვლელად გაიარეთ ავტორიზაცია {% endblocktrans %}<a href="{% url 'members:login' %}"> {% trans "ლინკი" %} </a>
+</p>
+
+ </div>
+{% endblock %}
+

@@ -1,0 +1,185 @@
+{% load i18n %}
+{% load gsmp_tags %}
+{% load static %}
+
+
+
+<style>
+    /* Custom Accordion Menu Styling */
+
+    /* Accordion კონტეინერი: ასაცილებლად border, shadow და border-radius */
+    .accordion {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* თითოეული Accordion item-ის საზღვრები */
+    .accordion-item {
+        border: none;
+    {#border-bottom: 1px solid #e5e5e5;#}
+    }
+
+    /* Accordion header-ის ფონი */
+    .accordion-header {
+        background-color: #9d959a;  /* ძირითადი ფონი, შეგიძლიათ შეცვალოთ */
+    }
+
+    /* Accordion ღილაკის სტილი */
+    .accordion-button {
+        background-color: #959b9d; /* ძირითადი ფონი */
+        color: #fff;              /* ტექსტის ფერი */
+        font-size: 16px;
+        padding: 1rem;
+        border: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ღილაკის hover და focus ეფექტი */
+    .accordion-button:hover,
+    .accordion-button:focus {
+        background-color: #525866; /* ჰოვერის დროს სიმბოლური ფერი */
+        color: #fff;
+    }
+
+    /* გახსნილი (expanded) ღილაკის ფონი */
+    .accordion-button:not(.collapsed) {
+        background-color: #737c92;
+        color: #fff;
+    }
+
+    /* Accordion collapse — გაათავისუფლეთ border-top */
+    .accordion-collapse {
+        border-top: none;
+    }
+
+    /* Accordion სხეული (body) — ქვემენიუს კონტეინერი */
+    .accordion-body {
+        background-color: #f5f5f5; /* შვებულ, ფრთხილი ფონი */
+        padding: 0;
+    }
+
+    /* ქვემენიუს (submenu) list-group item-ის სტილი */
+    .list-group-item {
+        border: none;
+        padding: 0.5rem 1rem;
+        background-color: #f5f5f5;
+        transition: background-color 0.3s ease;
+    }
+
+    /* list-group item-ის hover ეფექტი */
+    .list-group-item:hover {
+        background-color: #e0e0e0;
+    }
+
+    /* ქვემენიუს ლინკის სტილი */
+    .list-group-item a {
+        color: #333;
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 0;
+    }
+
+    /* ქვემენიუს ლინკის hover ეფექტი */
+    .list-group-item a:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+
+</style>
+
+
+<body>
+<div class="container mt-5" style="margin-top: 15px !important;">
+    <div class="accordion" style="padding-left: 10px" id="menuAccordion">
+
+        {% get_side_bar_menu  site as  menu_sidebar %}
+
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button  collapsed" style="background-color: #02adc6; font-weight: bold">
+                    {{ menu_sidebar.title }}
+                </button>
+            </h2>
+        </div>
+        {% for item in menu_sidebar.submenu %}
+
+            <div class="accordion-item">
+                {#                <h2 class="accordion-header" id="heading{{ item.url_name }}">#}
+                {#                    <a href="{% url item.url_name %}" class="text-decoration-none text-white" style="font-weight: 700;">#}
+                {#                        <button class="accordion-button {% if not item.submenu %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ item.url_name }}" aria-expanded="false" aria-controls="collapse{{ item.url_name}}">#}
+                {#                            {{ item.title }}#}
+                {#                        </button></a>#}
+                {#                </h2>#}
+
+                <h2 class="accordion-header" id="heading{{ item.url_name }}">
+                    <button class="accordion-button {% if not item.submenu %}collapsed{% endif %}" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse{{ item.url_name }}" aria-expanded="false"
+                            aria-controls="collapse{{ item.url_name }}">
+                        {{ item.title }}
+                    </button>
+                </h2>
+                {% if not item.submenu %}
+                    <script>
+                        document.getElementById("heading{{ item.url_name }}").addEventListener("click", function () {
+                            window.location.href = "{% url item.url_name %}";
+                        });
+                    </script>
+                {% endif %}
+                {% if item.submenu %}
+                    <div id="collapse{{ item.url_name }}" class="accordion-collapse collapse" aria-labelledby="heading{{ item.url_name }}" data-bs-parent="#menuAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-group">
+                                {% for sub in item.submenu %}
+                                    <li class="list-group-item">
+                                        <a href="{% url sub.url_name %}" class="text-decoration-none" style="font-weight: 400; padding: 0px">
+                                        {{ sub.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".accordion-button").forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                let target = document.querySelector(this.getAttribute("data-bs-target"));
+
+                if (target) {
+                    let isExpanded = this.getAttribute("aria-expanded") === "true";
+
+                    document.querySelectorAll(".accordion-collapse").forEach(function (el) {
+                        if (el !== target) {
+                            el.classList.remove("show");
+                        }
+                    });
+
+                    if (!isExpanded) {
+                        target.classList.add("show");
+                    }
+
+                    event.preventDefault();
+                }
+            });
+        });
+
+        document.querySelectorAll(".accordion-body a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        });
+    });
+</script>
+
+
+
+

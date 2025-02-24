@@ -1,0 +1,22 @@
+python manage.py makemigrations
+python manage.py migrate
+
+py manage.py startapp online_enc
+python manage.py createsuperuser
+
+python manage.py shell
+
+pip install -r requirements.txt
+
+python manage.py dumpdata > backup.json
+
+
+python manage.py startapp mp_news
+
+py manage.py makemessages --all
+py manage.py compilemessages
+
+py manage.py collectstatic
+
+
+pip freeze > requirements.txt

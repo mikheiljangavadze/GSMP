@@ -1,0 +1,284 @@
+{% load gsmp_tags %}
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+
+<html lang="ka">
+<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title> {{ title }}    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'mp_news/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'mp_news/css/font-awesome.min.css' %}">
+    {#        <link rel="stylesheet" href="{% static 'gsmp/css/breadcrumbs.css' %}">#}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet                                                    ">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Noto+Serif+Georgian:wght@100..900&display=swap');
+    </style>
+
+    <style>
+        {#// <uniquifier>: Use a unique and descriptive class name#}
+        {#// <weight>: Use a value from 100 to 900#}
+        .noto-sans-georgian-<uniquifier> {
+                                 font-family: "Noto Sans Georgian", serif;
+                                 font-optical-sizing: auto;
+                                 font-weight: <weight>;
+                                 font-style: normal;
+                                 font-variation-settings:
+                                         "wdth" 100;
+                             }
+        .noto-serif-georgian-<uniquifier> {
+                                  font-family: "Noto Serif Georgian", serif;
+                                  font-optical-sizing: auto;
+                                  font-weight: <weight>;
+                                  font-style: normal;
+                                  font-variation-settings:
+                                          "wdth" 100;
+    </style>
+
+    <style>
+        .dropdown-menu {
+            display: none;
+        }
+
+        /* Show dropdown when hovering */
+        .dropdown:hover > .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        {#.dropdown-item  {#}
+        {#    background-color: #ba2121;#}
+        {##}
+
+        .dropdown-item:hover  {
+            background-color: #abc5d2;
+
+        }
+
+        /* Ensure nested submenus appear properly */
+        .dropdown-submenu {
+            position: relative;
+        }
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: .1rem;
+            margin-top: -1px;
+            display: none;
+            position: absolute;
+        }
+        /* Show subsubmenu only on hover */
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+        .vl {
+  border-left: 3px solid #cedfce;
+  height: 40px;
+}
+    </style>
+</head>
+
+
+<body style="font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
+<div class="bg-top navbar-light">
+
+    <div class="container">
+        <div class="row no-gutters d-flex align-items-end" style="padding: 0; !important;">
+            <div class="col-md-4 py-0"  >
+                <a href="{% url 'gsmp:home' %}" >
+                    <img  role="img" height="150px" src="{% static 'gsmp/images/GSMP_Logo_GEO.svg' %}" alt="GSMP-LOGO_geo"/>
+                </a>
+            </div>
+            <div class="col-md-4" ></div>
+            <div class="col-md-4" style="padding: 0; !important;">
+                <div class="row " style="padding: 0; !important;">
+                    <div class="container mt-2 d-flex justify-content-end" style="padding-bottom: 0; !important; margin-bottom: 10px">
+                        <div class="col-auto" style="margin-right: 20px">
+                            <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-primary mx-0" style="padding: 0px;  margin: 0px; width: 30px !important;">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://x.com" target="_blank" class="btn btn-outline-dark mx-0" style="padding: 0px;  margin: 0px; width: 30px !important;">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger mx-0" style="padding: 0px;  margin: 0px; width: 30px !important;">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary mx-0" style="padding: 0px;  margin: 0px; width: 30px !important;">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-danger mx-0" style="padding: 0px;  margin: 0px; width: 30px !important;">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                        <div class="dropdown" >
+                            <button class="btn btn-light dropdown-toggle" type="button" id="languageSelector" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0px; height: 30px; margin: 0px;  !important;">
+                                {% if LANGUAGE_CODE == "ka" %}
+                                    <span class="fi fi-ge me-2"  ></span>
+                                {% else %}
+                                    <span class="fi fi-us me-2"  ></span>
+                                {%  endif %}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="languageSelector" style="--bs-dropdown-min-width: 0px">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for lang in languages %}
+                                    <li>
+                                        <a class="dropdown-item" href="/{{ lang.code }}/{{request.path|slice:"4:"}}"  >
+                                            {% if lang.name_local == "ქართული" %}
+                                                <span class="fi fi-ge me-2"  ></span>
+                                            {% else %}
+                                                <span class="fi fi-us me-2"  ></span>
+                                            {%  endif %}
+                                            {{ lang.name_local }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row   justify-content-end" style="margin-bottom: 10px">
+                    <div class="col-4" style="background-color: #4fdb3a; padding: 0; !important;">
+                        <form role="search">
+                            <input type="search" class="form-control" placeholder={% translate 'Search...' %} aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+                <div class="row  justify-content-end">
+                    <div class="col-6 d-flex  justify-content-end py-0"  style="padding: 0; !important;">
+                        {% if user.is_authenticated %}
+                            <a href="#"  class="btn btn-outline-dark"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user.first_name }} {{ user.last_name }} </a>
+                            <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);" data-popper-placement="bottom-start">
+                                <li><a class="dropdown-item" href="{% url 'members:profile' %}"> {% blocktranslate %}ჩემი პროფილი {% endblocktranslate  %}</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="post" action="{% url 'members:logout' %}">
+                                        {% csrf_token %}
+                                        <button class="dropdown-item" type="link">{% trans "გამოსვლა" %}</button>
+                                    </form>
+                            </ul>
+                        {% else %}
+                            <a href="{% url 'members:login' %}" class="btn btn-outline-dark" role="button">{% trans "შესვლა" %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color: #31484e" >
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="margin: 0px !important; border: 0px !important">
+        <div class="container" >
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-around mb-md-0" style="font-size: large; font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
+                {% get_main_menu as menu %}
+
+                {% for m in menu %}
+
+
+                    <li class="nav-item {% if m.submenu %} dropdown {% endif %}">
+                        <a class="nav-link px-2 text-white   {% if m.submenu %} dropdown-toggle {% endif %}" style="font-weight: 700; font-family: Noto Sans Georgian, serif; !important;"
+                           href="{% if m.url_name != '#' %}{% url m.url_name %}{% else %}#{% endif %}">
+                            {{ m.title }} </a>
+                        {% if m.submenu %}
+                            <ul class="dropdown-menu" aria-labelledby="menu{{ forloop.counter }}">
+                                {% for sub in m.submenu %}
+                                    {% if sub.submenu %}
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item dropdown-toggle" href="{% if sub.url_name != '#' %}{% url sub.url_name %}{% else %}#{% endif %}">
+                                                {{ sub.title }}</a>
+                                            <ul class="dropdown-menu">
+                                                {% for subsub in sub.submenu %}
+                                                    <li><a class="dropdown-item" href="{% url subsub.url_name %}">{{subsub.title }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% else %}
+                                        <li><a class="dropdown-item" href="{% url sub.url_name %}">{{ sub.title }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                    <div class="vl" ></div>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </header>
+</div>
+
+{% if request.resolver_match.url_name != 'home' %}
+   <div class="container justify-content-center align-content-center" style="padding: 0px !important;" >
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="font-weight: 300; font-size: 15px; margin: 0">
+            <li class="breadcrumb-item"><a href="{% url 'gsmp:home' %}">მთავარი</a></li>
+
+            {% for item in breadcrumbs %}
+                {% if forloop.last %}
+                    <li class="breadcrumb-item active" aria-current="page">{{ item.title }}</li>
+                {% else %}
+                    <li class="breadcrumb-item"><a href="{% url item.url %}">{{ item.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+</div>
+{% endif %}
+
+
+<div class="container-fluid" style="padding: 0px !important;" >
+    {% block content %}
+    {% endblock %}
+</div>
+<div>
+    {% include "gsmp/footer.html" %}
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="{% static 'mp_news/js/active.js'%}"></script>
+<script src="{% static 'mp_news/js/comment.js'%}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let dropdowns = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdowns.forEach(function(dropdown) {
+            dropdown.addEventListener("click", function(e) {
+                if (window.innerWidth < 992) { // Mobile devices
+                    e.preventDefault();
+                    let nextMenu = this.nextElementSibling;
+                    if (nextMenu.style.display === "block") {
+                        nextMenu.style.display = "none";
+                    } else {
+                        nextMenu.style.display = "block";
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

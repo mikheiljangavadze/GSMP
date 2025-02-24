@@ -1,0 +1,33 @@
+a.encyclopedia-term {
+    color: #0056b3; /* ლურჯი ფერი */
+        text-decoration: none;
+font-weight: bold;
+border-bottom: 2px dotted #0056b3; /* ქვედა წყვეტილი ხაზი */
+transition: color 0.3s, border-bottom 0.3s;
+}
+
+a.encyclopedia-term:hover {
+    color: #ff6600; /* ნარინჯისფერი ჰოვერისთვის */
+        border-bottom: 2px solid #ff6600;
+}
+
+
+#tooltip {
+    position: absolute;
+background: rgba(0, 0, 0, 0.85);
+color: white;
+padding: 8px;
+border-radius: 5px;
+font-size: 14px;
+max-width: 250px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+display: none;
+z-index: 1000;
+pointer-events: none;
+}
+
+#tooltip.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}

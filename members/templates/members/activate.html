@@ -1,0 +1,13 @@
+{% load i18n %}
+{% autoescape off %}
+
+
+{% trans "Hi" %} {{user.username}}
+
+{% blocktrans %}Please use the link below to verify your account.{% endblocktrans %}
+
+
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+
+{% endautoescape %}

@@ -1,0 +1,146 @@
+{% block content %}
+    {% load static %}
+    {% load sidebar %}
+    {% load menu %}
+
+
+    <style>
+        #fontstyle1 {
+            font-size: 15px;
+            font-weight: 700;
+            font-family: Noto Sans Georgian, serif; !important;
+            margin-top: 0px;
+        }
+    </style>
+<link rel="stylesheet" href="{% static 'mp_news/css/style.css' %}">
+    <div class="wrapper">
+
+        <div class="container-fluid" style="padding: 0px; margin: 0px; !important;">
+            <div class="single-blog-area" style="padding-left: 300px; margin: 0px;">
+                <h2 class="sidebar-title" style="background-color: #efefef; width: 1280px; margin-top: 10px;"> {{ title }} </h2>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" style="padding: 0px; margin: 0px; !important;">
+            <div class="row" style="padding: 0px; margin: 0px; !important;">
+                <div class="col-sm-2  " style="padding: 0px; margin: 0px; !important;">
+                    {% show_menu %}
+                </div>
+                <div class="col-sm-8" style="padding: 0px; margin: 0px; !important;">
+                    <section class="blog-post-area" style="padding: 0px; margin: 0px; !important;">
+                        <div class="container flex-column" style="padding: 0px; margin: 0px; !important;">
+                            <div class="blog-post-area-style" style="padding: 0px; margin: 0px; !important;">
+                                <div class="row" style="padding: 0px; margin: 0px; !important;">
+
+                                    {% for post in posts %}
+                                        <div class="col-sm-4" >
+{#                                        style="width: max(315px)"#}
+                                            <div class="single-post" style="padding: 0px; margin-top: 5px; !important;">
+                                                <div class="main-img" style="padding: 0px; margin: 0px; !important;">
+
+                                                    {% if post.photo %}
+                                                        <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+                                                    {% else %}
+                                                        <img src="{% static 'mp_news/img/no-image.jpeg'%}" alt="{{ post.title }}" height="201" width="300">
+                                                    {% endif %}
+                                                </div>
+                                                <p><a href="{{ post.get_absolute_url }}" style="color: #0a094b">{{ post.title|truncatewords_html:14|safe }}</a></p>
+                                                <h4 style="
+                                                           margin: 0;
+                                                           padding: 0;
+                                                            " >
+                                                    <span>Posted By: <span class="author-name">{{ post.author }}</span></span>
+                                                </h4>
+                                                <p > <a href="{{ post.get_absolute_url }}"
+                                                            style="
+                                                                color: #061e37;
+                                                                font-family: Noto Sans Georgian, serif;
+                                                                font-size: 14px;
+                                                                font-weight: 500;
+                                                                line-height: 27px;
+                                                                padding-top: 10px;
+
+                                                                text-align: justify;
+                                                                min-height: 170px;
+                                                                text-decoration: none;
+                                                                text-decoration-color: #1b1b1b;
+                                                                        ">
+                                                        {{ post.content|striptags|truncatewords_html:25|safe }}
+
+                                                </a></p>
+                                                <h4><span>{{ post.created_at|date:"d.m.Y" }}</span></h4>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding: 0px; margin: 0px; !important;">
+                                {% if page_obj.has_other_pages %}
+                                    <div class="pegination">
+                                        <div class="nav-links">
+                                            {% if page_obj.has_previous %}
+                                                <a class="page-numbers" href="?page={{ page_obj.previous_page_number }}" tabindex="-1"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                                            {% endif %}
+                                            {% for p in page_obj.paginator.page_range %}
+                                                {% if page_obj.number == p %}
+                                                    <span class="page-numbers current">{{ p }}</span>
+                                                {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                                                    <a class="page-numbers" href="?page={{ p }}">{{ p }}</a>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if page_obj.has_next %}
+                                                <a class="page-numbers" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-2" >
+                    <div class="row-fluid" style="padding: 0px; margin: 0px; !important;">
+
+                        <section class="single-blog-area" style="padding: 0px; margin: 0px; !important;">
+                            <div class="container" style="padding: 0px; margin: 0px; !important;">
+                                {% get_popular 5 %}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding: 0px; margin-top: 40px; !important;">
+                <div class="col-sm-2" >     </div>
+                <div class="col-sm-8">
+                    <div class="row" style="padding: 0px; margin: 0px; !important;">
+                        <div class="col-sm-7">
+                            <section class="main-nav single-blog-area ">
+                                <div class="right-tags" style="width: 100%">
+                                    {% get_tags %}
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-sm-5" >
+                            <section class="main-nav single-blog-area">
+                                <div class="left-search newsletter" style="width: 100%  !important;">
+                                    <h2 id="fontstyle1" class="sidebar-title main-tl">ძებნა</h2>
+                                    <form action="{% url 'mp_news:search' %}" method="get">
+                                        <input type="text" name="s" id="" placeholder="ძიება...">
+                                        <input type="submit" value="მოძებნე">
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+{% endblock %}

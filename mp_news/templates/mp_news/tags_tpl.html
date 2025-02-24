@@ -1,0 +1,6 @@
+<div class="tags" style="padding: 0px; margin: 0px; !important;">
+    <h2 id="fontstyle1"   class="sidebar-title main-tl">ტეგები</h2>
+    {% for tag in tags %}
+    <p><a href="{{ tag.get_absolute_url }}">{{ tag.title }}</a></p>
+    {% endfor %}
+</div>
