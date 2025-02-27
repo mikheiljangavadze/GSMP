@@ -86,9 +86,9 @@
             display: block;
         }
         .vl {
-  border-left: 3px solid #cedfce;
-  height: 40px;
-}
+            border-left: 3px solid #cedfce;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -219,21 +219,21 @@
                     </li>
                     <div class="vl" ></div>
                 {% endfor %}
-            {% if user.is_authenticated %}
-                            <a href="#"  class="btn btn-outline-dark"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ user.first_name }} {{ user.last_name }} </a>
-                            <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);" data-popper-placement="bottom-start">
-                                <li><a class="dropdown-item" href="{% url 'members:profile' %}"> {% blocktranslate %}ჩემი პროფილი {% endblocktranslate  %}</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <form method="post" action="{% url 'members:logout' %}">
-                                        {% csrf_token %}
-                                        <button class="dropdown-item" type="link">{% trans "გამოსვლა" %}</button>
-                                    </form>
-                            </ul>
-                        {% else %}
-                            <a href="{% url 'members:login' %}" class="btn btn-outline-dark" role="button">{% trans "შესვლა" %}</a>
-                        {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="#"  class="btn btn-outline-dark"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ user.first_name }} {{ user.last_name }} </a>
+                    <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);" data-popper-placement="bottom-start">
+                        <li><a class="dropdown-item" href="{% url 'members:profile' %}"> {% blocktranslate %}ჩემი პროფილი {% endblocktranslate  %}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form method="post" action="{% url 'members:logout' %}">
+                                {% csrf_token %}
+                                <button class="dropdown-item" type="link">{% trans "გამოსვლა" %}</button>
+                            </form>
+                    </ul>
+                {% else %}
+                    <a href="{% url 'members:login' %}" class="btn btn-outline-dark" role="button">{% trans "შესვლა" %}</a>
+                {% endif %}
             </ul>
 
         </div>
@@ -241,21 +241,21 @@
 </div>
 
 {% if request.resolver_match.url_name != 'home' %}
-   <div class="container justify-content-center align-content-center" style="padding: 0px !important;" >
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="font-weight: 300; font-size: 15px; margin: 0">
-            <li class="breadcrumb-item"><a href="{% url 'gsmp:home' %}">მთავარი</a></li>
+    <div class="container justify-content-center align-content-center" style="padding: 0px !important;" >
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: 300; font-size: 15px; margin: 0">
+                <li class="breadcrumb-item"><a href="{% url 'gsmp:home' %}">მთავარი</a></li>
 
-            {% for item in breadcrumbs %}
-                {% if forloop.last %}
-                    <li class="breadcrumb-item active" aria-current="page">{{ item.title }}</li>
-                {% else %}
-                    <li class="breadcrumb-item"><a href="{% url item.url %}">{{ item.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ol>
-    </nav>
-</div>
+                {% for item in breadcrumbs %}
+                    {% if forloop.last %}
+                        <li class="breadcrumb-item active" aria-current="page">{{ item.title }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item"><a href="{% url item.url %}">{{ item.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </nav>
+    </div>
 {% endif %}
 
 
