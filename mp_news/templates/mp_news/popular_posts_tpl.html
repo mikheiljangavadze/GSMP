@@ -1,29 +1,45 @@
 {% load static %}
- {% load i18n %}
+{% load i18n %}
 <h2 id="fontstyle1" class="sidebar-title" style="margin-top: 0px; !important;">{% trans "ყველაზე კითხვადი" %} </h2>
 
 <div class="grid pop-post">
     {% for post in posts %}
-    <div class="portfolio-item popular">
-        {% if post.photo %}
-        <img src="{{ post.photo.url }}" alt="{{ post.title }}">
-        {% else %}
-        <img src="{% static 'mp_news/img/no-image.jpeg'%}" alt="{{ post.title }}" height="201" width="300">
-        {% endif %}
+        <div class="portfolio-item popular" style="margin-bottom: 0; margin-top: 20px">
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+            {% else %}
+                <img src="{% static 'mp_news/img/no-image.jpeg'%}" alt="{{ post.title }}" height="201" width="300">
+            {% endif %}
 
-        <div class="portfolio-text">
-            <h5><a href="{{ post.get_absolute_url }}"
-                   style="
-                         display: -webkit-box;
-                        -webkit-line-clamp: 3;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: normal;">
+            <div class="portfolio-text">
+                <h5><a href="{{ post.get_absolute_url }}"
+                       style="
+                               font-family: Noto Sans Georgian, serif;
+                               font-size: 14px;
+                               font-weight: 500;
+                               line-height: 15px;
+                               min-height: fit-content;
+                               {#min-height: 100px;#}
+                               text-decoration: none;
+                               display: -webkit-box;
+                               {#-webkit-line-clamp: 3;#}
+                               -webkit-box-orient: vertical;
+                               overflow: hidden;
+                               text-overflow: ellipsis;
+                               white-space: normal;">
 
-               {% with texttitle2=post.title %} {{texttitle2}} {%  endwith %} </a></h5>
-            <p>By {{ post.author }} <span>|</span>{{ post.created_at|date:"d.m.Y" }}</p>
+                    {% with texttitle2=post.title %} {{texttitle2|truncatewords_html:10|safe }} {%  endwith %} </a></h5>
+            </div>
         </div>
-    </div>
+            <div>
+                <p style="font-family: Noto Sans Georgian, serif;
+                        font-weight: 700;
+                        font-size: 12px;
+                        color: #061e37;
+                        text-decoration: none;   ">
+                    Posted By:
+                    {{ post.author }} <span>|</span>{{ post.created_at|date:"d.m.Y" }}</p>
+            </div>
+
     {% endfor %}
 </div>

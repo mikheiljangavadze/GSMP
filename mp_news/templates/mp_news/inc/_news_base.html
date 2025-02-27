@@ -50,7 +50,7 @@
                                                            margin: 0;
                                                            padding: 0;
                                                             " >
-                                                    <span>Posted By: <span class="author-name">{{ post.author }}</span></span>
+                                                    <span>Posted By: <span class="author-name">{{ post.author }} |  {{ post.created_at|date:"d.m.Y" }} </span></span>
                                                 </h4>
                                                 <p > <a href="{{ post.get_absolute_url }}"
                                                             style="
@@ -69,7 +69,11 @@
                                                         {{ post.content|striptags|truncatewords_html:25|safe }}
 
                                                 </a></p>
-                                                <h4><span>{{ post.created_at|date:"d.m.Y" }}</span></h4>
+                                           <div class="hl" style="
+
+                                                 border-bottom: 3px solid #cedfce;
+                                                  "></div>
+
                                             </div>
                                         </div>
                                     {% endfor %}
