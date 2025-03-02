@@ -19,6 +19,8 @@ def post_pdf_view(request, slug):
 
 
 
+
+
 class NewsHome(ListView):
     model = Post
     template_name = 'mp_news/index.html'

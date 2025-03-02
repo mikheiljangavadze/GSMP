@@ -6,7 +6,6 @@ from gsmp import views
 from . import views
 from gsmp.views import index, events
 
-
 app_name = "gsmp"
 
 
@@ -22,6 +21,7 @@ urlpatterns = [
     path('resources/', views.resources, name="resources"),
     path('members/', views.members, name="members"),
     path('mission/', views.mission, name="mission"),
+
 ]
 
 

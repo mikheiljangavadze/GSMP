@@ -161,12 +161,13 @@
 
     <div class="container-fluid"  style="padding: 0px !important;">
         <div class="row">
+        <div class="col-1">     </div>
             <div class="col-2">
                  {% with  "gsmp:about" as site%}
                 {% include "gsmp/components/side_bar_menu.html" %}
                 {%  endwith %}
             </div>
-            <div class="col-8" style="background-color: #dad7da">
+            <div class="col-7" style="background-color: #dad7da">
 
 
                 {{ article.content|safe }}
@@ -235,23 +236,6 @@
                                     </div>
                                 </div>
                             </div><!-- End Team Member -->
-
-{#                            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">#}
-{#                                <div class="team-member d-flex align-items-start">#}
-{#                                    <div class="pic"><img src="{% static 'gsmp/images/doctors/doctors-4.jpg' %}" class="img-fluid" alt=""></div>#}
-{#                                    <div class="member-info">#}
-{#                                        <h4>Amanda Jepson</h4>#}
-{#                                        <span>Neurosurgeon</span>#}
-{#                                        <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>#}
-{#                                        <div class="social">#}
-{#                                            <a href=""><i class="bi bi-twitter-x"></i></a>#}
-{#                                            <a href=""><i class="bi bi-facebook"></i></a>#}
-{#                                            <a href=""><i class="bi bi-instagram"></i></a>#}
-{#                                            <a href=""> <i class="bi bi-linkedin"></i> </a>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div><!-- End Team Member -->#}
 
                         </div>
 

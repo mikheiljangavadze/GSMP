@@ -60,7 +60,7 @@ pointer-events: none;
 
     <div class="container-flex" style="padding: 0px; margin: 0px; !important; justify-items: center">
         <div class="single-blog-area" style="padding: 0px; margin: 0px;">
-            <h2 class="sidebar-title" style="background-color: #efefef; width: 1500px; margin-top: 10px; font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
+            <h2 class="sidebar-title" style="background-color: #efefef; width: 1550px; margin-top: 10px; font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
                 {% blocktranslate with textcat=post.category %} {{textcat}} {% endblocktranslate %} </h2>
         </div>
     </div>
@@ -68,10 +68,11 @@ pointer-events: none;
     <section class="single-blog-area">
         <div class="container-fluid">
             <div class="row">
+            <div class="col-md-1">  </div>
                 <div class="col-md-2" >
                     {% show_menu %}
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <div class="container" style="text-align: end; padding-bottom: 7px;">
                         <a href="{% url 'mp_news:post_pdf' slug=post.slug %}" >
                             <img  role="img" style="width: 30px"  src="{% static 'gsmp/images/pdf-icon.png' %}" alt="GSMP-LOGO_geo"/>
@@ -109,7 +110,7 @@ pointer-events: none;
                                     {{ post.content|highlight_terms|safe }}
                                 </div>
                             </div>
-<div id="tooltip"></div>
+                            <div id="tooltip"></div>
                             <div class="tags" style="padding: 0px; margin-top: 20px; !important;">
                                 <h2 id="fontstyle1" class="sidebar-title main-tl" > სტატიის ტეგები</h2>
                                 {% for tag in post.tags.all %}
@@ -199,6 +200,7 @@ pointer-events: none;
                     {% get_tags %}
 
                 </div>
+                <div class="col-md-1">  </div>
             </div>
         </div>
         </div>

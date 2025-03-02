@@ -3,28 +3,20 @@
 {% load gsmp_tags %}
 {% load static %}
 
-
-
 {% block content %}
-
-
-
     <div class="container-fluid"  style="padding: 0px !important;">
         <div class="row">
+            <div class="col-1">   </div>
             <div class="col-2">
-                 {% with  "gsmp:about" as site%}
-                {% include "gsmp/components/side_bar_menu.html" %}
+                {% with  "gsmp:about" as site%}
+                    {% include "gsmp/components/side_bar_menu.html" %}
                 {%  endwith %}
             </div>
-            <div class="col-8" style="background-color: #dad7da">
-
-<h1> ჩვენი ისტორია</h1>
+            <div class="col-7">
+                <h1> ჩვენი ისტორია</h1>
                 {{ article.content|safe }}
-
-
             </div>
-            <div class="col-2" style="background-color: #65b243">     </div>
+            <div class="col-2">     </div>
         </div>
     </div>
-
 {% endblock %}

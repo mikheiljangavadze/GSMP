@@ -13,7 +13,13 @@ from reportlab.lib.units import inch, cm
 from reportlab.lib.pagesizes import letter
 from .models import Article
 
+from django.template.loader import render_to_string
 
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+
+
+from gsmp.models import Article  # შეცვალე შენი მოდელის სახელით
 
 
 # @login_required
@@ -115,6 +121,8 @@ def history(request):
     }
 
     return render(request, 'gsmp/history.html', context=context)
+
+
 
 
 
