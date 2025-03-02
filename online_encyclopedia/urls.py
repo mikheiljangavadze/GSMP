@@ -14,5 +14,7 @@ urlpatterns = [
     path('<slug:slug>/', views.term_detail, name='online_encyclopedia_details'),
     path("get-terms/", get_terms, name="get_terms"),
     path("get-term-definition/<slug:slug>/", get_term_definition, name="get_term_definition"),
+    path("get-term-definition/<slug:slug>/pdf/", views.post_pdf_view, name='post_pdf'),
+
 
 ]

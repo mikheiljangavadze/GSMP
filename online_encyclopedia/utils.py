@@ -27,7 +27,7 @@ def generate_pdf(post):
 
 
 
-    content = post.content
+    content = post.definition
     content1 = unescape(strip_tags(content))
 
 
@@ -38,15 +38,19 @@ def generate_pdf(post):
     story = []
     # სურათის დამატება
     # სრული ფაილური სისტემის ბილიკის გამოყენება
-    if post.photo and post.photo.url:
-        image_path = os.path.join(settings.MEDIA_ROOT, post.photo.name)
-        story.append(Image(image_path, width=400, height=200))
+
+    try:
+        if post.photo and post.photo.url:
+            image_path = os.path.join(settings.MEDIA_ROOT, post.photo.name)
+            story.append(Image(image_path, width=400, height=200))
+    except:
+        pass
 
 
     # ტექსტის გადატანა Paragraph-ის გამოყენებით
 
     # content = f"Title: {post.title}\nAuthor: {post.author}\nContent: {post.content}"
-    contenti = f"<b>Title:</b> {post.title}<br/><b>Author:</b> {post.author}<br/><b>Content:</b> {content1}"
+    contenti = f"<b>Title:</b> {post.title}<br/>  <b>Definition:</b> {content1}"
     story.append(Paragraph(contenti, styles['Normal']))
 
     doc.build(story)

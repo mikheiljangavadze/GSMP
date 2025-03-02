@@ -4,7 +4,10 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.utils.html import strip_tags
 from django.db.models import Q
+
+from .utils import generate_pdf
 from .models import OnlineEncyclopedia
+
 
 def term_list(request):
     letter = request.GET.get('letter', None)  # იღებს ასოს GET პარამეტრიდან
@@ -50,3 +53,10 @@ def get_terms(request):
 def get_term_definition(request, slug):
     term = get_object_or_404(OnlineEncyclopedia, slug=slug)
     return JsonResponse({"definition": strip_tags(term.definition)[:400] + "..."})
+
+
+def post_pdf_view(request, slug):
+    post = get_object_or_404(OnlineEncyclopedia, slug=slug)
+
+
+    return generate_pdf(post)

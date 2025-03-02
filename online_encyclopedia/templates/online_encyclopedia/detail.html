@@ -56,7 +56,11 @@ pointer-events: none;
                 {%  endwith %}
             </div>
             <div class="col-8"  style="background-color: #faf8fa">
-
+                    <div class="container" style="text-align: end; padding-bottom: 7px;">
+                        <a href="{% url 'online_encyclopedia:post_pdf' slug=term.slug %}" >
+                            <img  role="img" style="width: 30px"  src="{% static 'gsmp/images/pdf-icon.png' %}" alt="GSMP-LOGO_geo"/>
+                        </a>
+                    </div>
                 <div class="row"  >
                     <h1>{{ term.title }}</h1>
                     <p>{{ term.definition|highlight_terms|safe }}</p>  {# ავტომატური ლინკების ჩამატება #}
