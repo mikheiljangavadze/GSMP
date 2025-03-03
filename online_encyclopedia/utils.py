@@ -1,17 +1,13 @@
 import os
 from html import unescape
-
 from django.conf import settings
 from django.http import FileResponse, HttpResponse
 import io
-
 from django.template.defaultfilters import striptags
 from django.utils.html import strip_tags
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch, cm
 from reportlab.lib.pagesizes import letter
-
-
 
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Image
