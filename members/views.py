@@ -9,13 +9,15 @@ from django.contrib.auth.views import LoginView, PasswordChangeView
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.context_processors import request
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views.generic import CreateView, UpdateView
 from django.conf import settings
+
+from gsmp.models import Article
 from .models import GsmpMember
 from .tokens import account_activation_token
 from .utils import generate_token
@@ -113,4 +115,14 @@ class UserPasswordChange(PasswordChangeView):
     success_url = reverse_lazy("members:password_change_done")
     template_name = "members/password_change_form.html"
     extra_context = {'title': "პაროლის შეცვლა"}
+
+
+def membership(request):
+    article = get_object_or_404(Article, slug="membership")
+
+    context = {
+        'article': article,
+    }
+
+    return render(request, 'members/membership.html', context=context)
 

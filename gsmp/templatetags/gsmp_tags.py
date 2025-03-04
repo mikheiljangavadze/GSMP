@@ -54,7 +54,13 @@ def get_main_menu():
 
                  ]},
 
-                 {'title': _('წევრობა'), 'url_name': 'members:register'}
+                 {'title': _('წევრობა'), 'url_name': 'members:membership', "submenu":  [
+                         {'title': _('წევრის უპირატესობები'), 'url_name': 'members:membership'},
+                        {'title': _('წევრობის ტიპები'), 'url_name': 'members:membership'},
+                         {'title': _('გახდი წევრი'), 'url_name': 'members:register'},
+                     {'title': _('წევრის პროფილი'), 'url_name': 'members:profile'},
+
+                        ]},
                  ]
 
     return main_menu
