@@ -9,6 +9,8 @@ from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
 from django.http import FileResponse
 import io
+
+from django.views.generic import DetailView
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch, cm
 from reportlab.lib.pagesizes import letter
@@ -90,8 +92,6 @@ def advisory_board (request):
 
 
 def who_we_are(request):
-
-
 
     article = get_object_or_404(Article, slug="who_we_are")
     context = {
