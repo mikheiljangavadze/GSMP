@@ -189,14 +189,11 @@
         <div class="container" >
             <ul class="nav col-12 col-md-auto mb-2 justify-content-around mb-md-0" style="font-size: large; font-weight: 700; font-family: Noto Sans Georgian, serif; !important;">
                 {% get_main_menu as menu %}
-
                 {% for m in menu %}
-
-
                     <li class="nav-item {% if m.submenu %} dropdown {% endif %}">
                         <a class="nav-link px-2 text-white   {% if m.submenu %} dropdown-toggle {% endif %}" style="font-weight: 700; font-family: Noto Sans Georgian, serif; !important;"
                            href="{% if m.url_name != '#' %}{% url m.url_name %}{% else %}#{% endif %}">
-                            {{ m.title }} </a>
+                            {{ m.title }}</a>
                         {% if m.submenu %}
                             <ul class="dropdown-menu" aria-labelledby="menu{{ forloop.counter }}">
                                 {% for sub in m.submenu %}
