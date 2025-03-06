@@ -48,6 +48,9 @@ def about(request):
 
     return render(request, 'gsmp/about.html')
 
+def newsall(request):
+
+    return render(request, 'gsmp/newsall.html')
 
 def mission(request):
     article = get_object_or_404(Article, slug="WhoWeAre")
@@ -91,7 +94,8 @@ def advisory_board (request):
     return render(request, 'gsmp/advisory_board.html', context=context)
 
 
-def who_we_are(request):
+def who_we_are(request, slug):
+    print(slug)
 
     article = get_object_or_404(Article, slug="who_we_are")
     context = {

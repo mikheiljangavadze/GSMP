@@ -46,7 +46,17 @@ def get_main_menu():
 
 
 
-                 {'title': _('სიახლეები'), 'url_name': 'mp_news:newshome'},
+                 {'title': _('სიახლეები'), 'url_name':'gsmp:newsall', 'submenu':[
+                        {'title': _('GSMP სიახლები'), 'url_name': 'gsmp:about'},
+                         {'title': _('მოლეკულური პათოლოგიის სიახლეები'), 'url_name': 'mp_news:newshome'},
+
+                     ]},
+
+
+
+
+
+
                  {'title': _('ღონისძიებები'), 'url_name': 'gsmp:events'},
                  {'title': _('რესურსები'), 'url_name': 'gsmp:resources', "submenu":  [
                          {'title': _('Online Encyclopedia'), 'url_name': 'online_encyclopedia:online_encyclopedia_home'},
