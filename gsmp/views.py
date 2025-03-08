@@ -94,8 +94,8 @@ def advisory_board (request):
     return render(request, 'gsmp/advisory_board.html', context=context)
 
 
-def who_we_are(request, slug):
-    print(slug)
+def who_we_are(request):
+
 
     article = get_object_or_404(Article, slug="who_we_are")
     context = {
