@@ -5,7 +5,7 @@ from django.template.context_processors import request
 from django.urls import path
 
 from gsmp import views
-from . import views
+from .views import *
 from gsmp.views import index, events
 
 app_name = "gsmp"
@@ -19,12 +19,12 @@ urlpatterns = [
     path('advisory_board/', views.advisory_board, name="advisory_board"),
     path('who_we_are/', views.who_we_are, name="who_we_are"),
     path('history/', views.history, name="history"),
-    # path('news/', views.index, name="news"),
-    path('events/', views.index, name="events"),
+    path('events/', views.events, name="events"),
     path('resources/', views.resources, name="resources"),
     path('members/', views.members, name="members"),
     path('mission/', views.mission, name="mission"),
 
+    # path('<str:page>/', StaticPageView.as_view(), name="static_page"),
 ]
 
 

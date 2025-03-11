@@ -4,52 +4,51 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import path
-
-from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
 from django.http import FileResponse
 import io
-
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch, cm
 from reportlab.lib.pagesizes import letter
 from .models import Article
-
 from django.template.loader import render_to_string
-
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.utils.translation import gettext_lazy as _
 
 
-from gsmp.models import Article  # შეცვალე შენი მოდელის სახელით
+
+
+
+
+
+# class StaticPageView(TemplateView):
+#     template_name = ""
+#     def get_template_names(self):
+#         page1 = self.kwargs['page'].split(":")[-1]
+#         prefix = self.kwargs['page'].split(":")[0]
+#         print(page1)
+#
+#
+#
+#         return [f"{prefix}/{page1}.html"]
 
 
 
 # @login_required
 def index(request):
-    # activate('ka')
-    # context = {}
-    # trans =  translate(language='ka'){'trans': trans}
-    return render(request, 'gsmp/index.html',)
+    context = {
+        'title': _("GSMP - საქართველოს მოლეკულური პათოლოგიის საზოგადოება"),
+    }
 
+    return render(request, 'gsmp/index.html', context=context)
 
-# def translate(language):
-#     cur_language = get_language()
-#     try:
-#         activate(language)
-#         text = gettext('გამარჯობა')
-#     finally:
-#         activate(cur_language)
-#     return text
 
 
 def about(request):
-
     return render(request, 'gsmp/about.html')
 
 def newsall(request):
-
     return render(request, 'gsmp/newsall.html')
 
 def mission(request):
@@ -60,9 +59,7 @@ def mission(request):
     return render(request, 'gsmp/mission.html', context=context)
 
 
-def news(request):
 
-    return render(request, 'gsmp/index.html',)
 
 
 def events(request):
@@ -95,28 +92,11 @@ def advisory_board (request):
 
 
 def who_we_are(request):
-
-
     article = get_object_or_404(Article, slug="who_we_are")
     context = {
         'article': article,
     }
     return render(request, 'gsmp/who_we_are.html', context=context)
-
-
-# def articlaaaa(request):
-#
-#
-#     # slug = slug.split("/").pop(-2)
-#
-#
-#
-#     article = get_object_or_404(Article, slug="slug")
-#     context = {
-#         'article': article,
-#     }
-#     return render(request, 'gsmp/who_we_are.html', context=context)
-#
 
 def history(request):
     article = get_object_or_404(Article, slug="who_we_are")

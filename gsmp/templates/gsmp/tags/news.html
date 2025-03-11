@@ -24,12 +24,10 @@
     }
     .card-text {
         display: -webkit-box;
-
         -webkit-line-clamp: 7;
         -webkit-box-orient: vertical;
         overflow: hidden;
-         text-align: justify;
-
+        text-align: justify;
         text-overflow: ellipsis;
         white-space: normal;
     }
@@ -57,13 +55,13 @@
         white-space: normal;
     }
     #cont1 {
-        padding: 0px;
+        padding-bottom: 4px;
+        padding-top: 4px;
         margin: 0px;
     }
     #title2{
-         font-size: 12pt;
+        font-size: 12pt;
         font-weight: 600;
-
     }
     #cardnews {
         margin-bottom: 20px;
@@ -71,8 +69,9 @@
 </style>
 
 <body >
-<div style="justify-items: center;  font-family: Noto Sans Georgian, serif; !important; font-weight: 700; !important;"> <h1 style="margin: 0px">{%  translate "სიახლეები" %}</h1></div>
-
+<div style="justify-items: center;  font-family: Noto Sans Georgian, serif; !important; font-weight: 700; !important;">
+    <h1 style="margin: 0px">{%  translate "სიახლეები" %}</h1>
+</div>
 <div class="news">
     <div class="container" style="padding: 0px !important;" >
         <div class="row" style="padding: 0px !important;">
@@ -89,21 +88,17 @@
                         <h5 class="card-title"> <a id="link1"  class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
                                                    href="{{ last_news.get_absolute_url }}"> {{ last_news.title }} </a> </h5>
                         <hr class="rounded">
-                        <li class="card-text" style="font-weight: lighter; font-size: 10pt; !important;"> <a id="link2" class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
-                                                  href="{{ last_news.get_absolute_url }}"> {{ last_news.content | truncatewords_html:40| safe }} </a>  </li>
+                        <li class="card-text" style="font-weight: lighter; font-size: 10pt; !important;">
+                            <a id="link2" class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                            href="{{ last_news.get_absolute_url }}"> {{ last_news.content | truncatewords_html:40| safe }} </a>  </li>
                     </div>
                     <div class="card-footer">
-                        <div class="container" id="cont1">
+                        <div class="container" >
                             <ul class="nav justify-content-around">
-                                <p id="cont1" >{{last_news.author}}  </p>
-                                <p id="cont1">|</p>
-                                <p id="cont1">{{ last_news.created_at|date:'d-m-Y'}}</p>
-
+                                <p>{{last_news.author}}  </p>
+                                <p>|</p>
+                                <p>{{ last_news.created_at|date:'d-m-Y'}}</p>
                             </ul>
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -122,13 +117,15 @@
                                 <div class="card-body" style="background-color:#f5f5f5">
                                     <h6 class="card-title" id="title2">
                                         <a id="link1"  class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
-                                           href="{{ news.get_absolute_url }}"> {{  news.title }}  </a></h6>
+                                           href="{{ news.get_absolute_url }}"> {{  news.title }} </a></h6>
                                 </div>
                                 <div class="card-footer">
                                     <div class="container" id="cont1">
-                                    <ul class="nav justify-content-around">
-                                    <p id="cont1">{{news.author}} </p> <p id="cont1">|</p>   <p id="cont1"> {{ news.created_at|date:'d-m-Y'}} </p>
-                                    </ul>
+                                        <ul class="nav justify-content-around">
+                                            <p id="cont1">{{news.author}} </p>
+                                            <p id="cont1">|</p>
+                                            <p id="cont1"> {{ news.created_at|date:'d-m-Y'}} </p>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
