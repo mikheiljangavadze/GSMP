@@ -16,31 +16,11 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
 
-
-
-
-
-
-
-# class StaticPageView(TemplateView):
-#     template_name = ""
-#     def get_template_names(self):
-#         page1 = self.kwargs['page'].split(":")[-1]
-#         prefix = self.kwargs['page'].split(":")[0]
-#         print(page1)
-#
-#
-#
-#         return [f"{prefix}/{page1}.html"]
-
-
-
 # @login_required
 def index(request):
     context = {
         'title': _("GSMP - საქართველოს მოლეკულური პათოლოგიის საზოგადოება"),
     }
-
     return render(request, 'gsmp/index.html', context=context)
 
 
@@ -58,26 +38,18 @@ def mission(request):
     }
     return render(request, 'gsmp/mission.html', context=context)
 
-
-
-
-
 def events(request):
     return render(request, 'gsmp/index.html',)
 
-
 def resources(request):
     return render(request, 'gsmp/resources.html',)
-
 
 def members(request):
     return render(request, 'gsmp/memberregistrationform.html',)
 
 
-
-
 def director_board(request):
-    article = get_object_or_404(Article, slug="WhoWeAre")
+    article = get_object_or_404(Article, slug="who_we_are")
     context = {
         'article': article,
     }
@@ -89,7 +61,6 @@ def advisory_board (request):
         'article': article,
     }
     return render(request, 'gsmp/advisory_board.html', context=context)
-
 
 def who_we_are(request):
     article = get_object_or_404(Article, slug="who_we_are")
@@ -104,12 +75,4 @@ def history(request):
         'article': article,
     }
     return render(request, 'gsmp/history.html', context=context)
-
-
-
-
-
-
-
-
 

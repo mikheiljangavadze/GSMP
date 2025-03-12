@@ -1,15 +1,11 @@
-
-
 from django.contrib import admin
 from django.template.context_processors import request
 from django.urls import path
-
 from gsmp import views
 from .views import *
 from gsmp.views import index, events
 
 app_name = "gsmp"
-
 
 urlpatterns = [
     path('', views.index, name="home"),
@@ -23,8 +19,4 @@ urlpatterns = [
     path('resources/', views.resources, name="resources"),
     path('members/', views.members, name="members"),
     path('mission/', views.mission, name="mission"),
-
-    # path('<str:page>/', StaticPageView.as_view(), name="static_page"),
 ]
-
-

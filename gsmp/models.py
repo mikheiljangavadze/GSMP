@@ -9,9 +9,11 @@ from tinymce.models import HTMLField
 
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name='Name')
+    title_eng = models.CharField(max_length=255, default=True, verbose_name='Name_eng')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='Link')
     author = models.CharField(max_length=100, verbose_name='Author')
     content = HTMLField(blank=True, verbose_name='Content')
+    content_eng = HTMLField(blank=True, verbose_name='Content_eng')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Published')
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Photo')
     views = models.IntegerField(default=0, verbose_name='Number of views')

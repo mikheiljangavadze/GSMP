@@ -8,12 +8,12 @@
 {% block content %}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        {#body {#}
-        {#   text-align: center;#}
-        {#   font-size: 100%;#}
-        {#   margin: 0 auto;#}
-        {#   top: 20%;#}
-        {#}#}
+        body {
+           text-align: center;
+           font-size: 100%;
+           margin: 0 auto;
+           top: 20%;
+        }
         #main {
             width: 100%;
             text-align: center;
@@ -155,7 +155,7 @@
         .doctors .team-member .social a+a {
             margin-left: 8px;
         }
-        }
+
     </style>
 
 
@@ -163,27 +163,19 @@
         <div class="row">
 <div class="col-1"  >     </div>
             <div class="col-2">
-
                 {% with  "gsmp:about" as site   %}
                     {% include "gsmp/components/side_bar_menu.html" %}
                 {%  endwith %}
-
             </div>
             <div class="col-7">
-
-
                 <section id="doctors" class="doctors section">
-
                     <!-- Section Title -->
                     <div class="container section-title aos-init aos-animate" data-aos="fade-up">
                         <h2>დირექტორთა საბჭო</h2>
                         <p> </p>
                     </div><!-- End Section Title -->
-
                     <div class="container">
-
                         <div class="row gy-4">
-
                             <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                                 <div class="team-member d-flex align-items-start">
                                     <div class="pic"><img src="{% static 'gsmp/images/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div>
@@ -200,7 +192,6 @@
                                     </div>
                                 </div>
                             </div><!-- End Team Member -->
-
                             <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                                 <div class="team-member d-flex align-items-start">
                                     <div class="pic"><img src="{% static 'gsmp/images/doctors/doctors-2.jpg' %}" class="img-fluid" alt=""></div>
@@ -217,7 +208,6 @@
                                     </div>
                                 </div>
                             </div><!-- End Team Member -->
-
                             <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                                 <div class="team-member d-flex align-items-start">
                                     <div class="pic"><img src="{% static 'gsmp/images/doctors/doctors-3.jpg' %}" class="img-fluid" alt=""></div>
@@ -234,7 +224,6 @@
                                     </div>
                                 </div>
                             </div><!-- End Team Member -->
-
                             <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
                                 <div class="team-member d-flex align-items-start">
                                     <div class="pic"><img src="{% static 'gsmp/images/doctors/doctors-4.jpg' %}" class="img-fluid" alt=""></div>
@@ -251,19 +240,13 @@
                                     </div>
                                 </div>
                             </div><!-- End Team Member -->
-
                         </div>
-
                     </div>
-
                 </section>
-
             </div>
             <div class="col-2"  >     </div>
         </div>
     </div>
-
-
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

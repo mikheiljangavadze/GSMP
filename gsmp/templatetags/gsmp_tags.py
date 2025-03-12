@@ -4,11 +4,7 @@ from mp_news.models import Post
 from django.utils.translation import gettext_lazy as _
 
 
-
-
-
 register = template.Library()
-
 
 @register.inclusion_tag('gsmp/tags/news.html')
 def get_last_news():
@@ -16,7 +12,6 @@ def get_last_news():
     last_news = news[0]
     last_news_group = news[1:7]
     return {"last_news": last_news,  "last_news_group": last_news_group}
-
 
 @register.simple_tag()
 def get_main_menu():
@@ -44,18 +39,11 @@ def get_main_menu():
                      ]},
                  ]},
 
-
-
                  {'title': _('სიახლეები'), 'url_name':'gsmp:newsall', 'submenu':[
                         {'title': _('GSMP სიახლები'), 'url_name': 'gsmp:about'},
                          {'title': _('მოლეკულური პათოლოგიის სიახლეები'), 'url_name': 'mp_news:newshome'},
 
                      ]},
-
-
-
-
-
 
                  {'title': _('ღონისძიებები'), 'url_name': 'gsmp:events'},
                  {'title': _('რესურსები'), 'url_name': 'gsmp:resources', "submenu":  [
@@ -90,24 +78,6 @@ def get_side_bar_menu(requested_url):
 
 
 
-
-    # main_menu = [{'title': 'GSMP', 'url_name': 'gsmp:home'},
-    #             {'title': _('ჩვენს შესახებ'), 'url_name': 'gsmp:about',  "submenu": [
-    #                 {"title": "Nature", "url_name": "members:register"},
-    #                 {"title": "Medical", "url_name": "gsmp:resurses"},
-    #                 {"title": "Science", "url_name": "gsmp:events", "submenu": [
-    #                     {'title': _('სიახლეები'), 'url_name': 'mp_news:newshome'},
-    #                     {'title': _('სედე'), 'url_name': 'gsmp:resurses'},
-    #                  ]},
-    #                 ]},
-    #
-    #
-    #
-    #             {'title': _('სიახლეები'), 'url_name': 'mp_news:newshome'},
-    #             {'title': _('ღონისძიებები'), 'url_name': 'gsmp:events'},
-    #             {'title': _('რესურსები'), 'url_name': 'gsmp:resurses'},
-    #             {'title': _('წევრობა'), 'url_name': 'members:register'},
-    #             ]
 
 
 

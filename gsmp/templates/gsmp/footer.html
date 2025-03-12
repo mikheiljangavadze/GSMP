@@ -5,17 +5,10 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
 {#<div class="container-fluid text-center align-items-center">#}
 
-    <footer
-            class="text-center text-lg-start text-white"
-            style="background-color: #929fba"
-    >
-
+    <footer class="text-center text-lg-start text-white" style="background-color: #929fba" >
         <div class="container p-4 pb-0">
-
             <section class="">
-
                 <div class="row">
-
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">
                             <a href="{% url 'gsmp:home' %}" >
@@ -28,11 +21,7 @@
                             {#              elit.#}
                         </p>
                     </div>
-
-
                     <hr class="w-100 clearfix d-md-none" />
-
-
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold"> {%  translate "მენიუ" %} </h5>
                         {% for m in menu %}
@@ -132,4 +121,4 @@
 
     </footer>
 
-{#</div>#}
+

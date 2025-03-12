@@ -2,7 +2,7 @@ from django.urls import resolve
 from .templatetags.gsmp_tags import get_main_menu
 
 def breadcrumb_processor(request):
-    """ გენერირებს Breadcrumb მენიუს დინამიურად """
+    """  Breadcrumb მენიუს დინამიურად """
     breadcrumbs = []
     path = request.path  # იღებს მიმდინარე URL-ს
     match = resolve(path)  # აბრუნებს view-ს ინფორმაციას
