@@ -4,6 +4,25 @@
 {% load static %}
 
 {% block content %}
+
+        <style>
+        #partners {
+            justify-items: center;
+            background-color: #c8d6df;
+            font-family: Noto Sans Georgian, serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #264b5d;
+
+
+        }
+        #partners, ul {
+            padding: 0;
+            margin: 0;
+        }
+
+
+    </style>
     <div class="container-fluid"  style="padding: 0px !important;">
         <div class="row">
             <div class="col-1"> </div>
@@ -17,7 +36,22 @@
                 <h3> იქნება ბანერი მისალმებით</h3>
                 <h3> ჩვენს შესახებ დაწვრილებით შეგიძლიათ უხილოთ აქ</h3>
             </div>
-            <div class="col-2">     </div>
+             <div class="col-2" id="partners"  >
+                {% if LANGUAGE_CODE == "ka" %}
+                    <ul> ჩვენი </ul>
+                    <ul> პარტნიორები </ul>
+                {% else %}
+                    <h3> Our </h3>
+                    <h3> Partners </h3>
+                {%  endif %}
+
+                <a target="_blank" href="https://tsu.ge/" >
+                    <img style="padding-bottom: 10px" role="img" height="80px" src="{% static 'gsmp/images/tsu.png' %}" alt="tsu-LOGO_geo"/>
+                </a>
+                <a href="{% url 'gsmp:home' %}">
+                    <img  style="padding-bottom: 10px" role="img" height="80px" src="{% static 'gsmp/images/tsu_eng.png' %}" alt="tsu-LOGO_eng"/>
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}

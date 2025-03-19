@@ -9,6 +9,20 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
+     #partners {
+            justify-items: center;
+            background-color: #c8d6df;
+            font-family: Noto Sans Georgian, serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #264b5d;
+
+
+        }
+        #partners, ul {
+            padding: 0;
+            margin: 0;
+        }
         {#body {#}
         {#   text-align: center;#}
         {#   font-size: 100%;#}
@@ -179,16 +193,21 @@
 
             </div>
 
-            <div class="col-2" >
-                <h3> ჩვენი                     </h3>
-                 <h3> პარტნიორები </h3>
-                <a href="{% url 'gsmp:home' %}" >
+            <div class="col-2" id="partners"  >
+                {% if LANGUAGE_CODE == "ka" %}
+                    <ul> ჩვენი </ul>
+                    <ul> პარტნიორები </ul>
+                {% else %}
+                    <h3> Our </h3>
+                    <h3> Partners </h3>
+                {%  endif %}
+
+                <a target="_blank" href="https://tsu.ge/" >
                     <img style="padding-bottom: 10px" role="img" height="80px" src="{% static 'gsmp/images/tsu.png' %}" alt="tsu-LOGO_geo"/>
                 </a>
-                <a href="{% url 'gsmp:home' %}"  style="padding-bottom: 10px">
+                <a href="{% url 'gsmp:home' %}">
                     <img  style="padding-bottom: 10px" role="img" height="80px" src="{% static 'gsmp/images/tsu_eng.png' %}" alt="tsu-LOGO_eng"/>
                 </a>
-
             </div>
          <section id="doctors" class="doctors section">
                 <!-- Section Title -->

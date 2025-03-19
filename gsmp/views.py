@@ -32,7 +32,7 @@ def newsall(request):
     return render(request, 'gsmp/newsall.html')
 
 def mission(request):
-    article = get_object_or_404(Article, slug="WhoWeAre")
+    article = get_object_or_404(Article, slug="mission")
     context = {
         'article': article,
     }

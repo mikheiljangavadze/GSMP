@@ -20,20 +20,20 @@ def get_main_menu():
                      {'title': _('ასოციაციის შესახებ'), 'url_name': 'gsmp:who_we_are', 'submenu': [
                          {'title': _('ვინ ვართ ჩვენ'), 'url_name': 'gsmp:who_we_are'},
                          {'title': _('ჩვენი მიზნები'), 'url_name': 'gsmp:mission'},
-                         {'title': _('ისტორია'), 'url_name': 'gsmp:history'},
-                         {'title': _('დირექტორთა საბჭო'), 'url_name': 'gsmp:director_board'},
-                         {'title': _('მრჩეველთა საბჭო'), 'url_name': 'gsmp:advisory_board'},
+                         # {'title': _('ისტორია'), 'url_name': 'gsmp:history'},
+                         # {'title': _('დირექტორთა საბჭო'), 'url_name': 'gsmp:director_board'},
+                         # {'title': _('მრჩეველთა საბჭო'), 'url_name': 'gsmp:advisory_board'},
 
                      ]},
                      {'title': _('კომიტეტები'), 'url_name': 'gsmp:about', 'submenu': [
-                         {'title': _('საგარეო'), 'url_name': 'gsmp:about'},
-                         {'title': _('მეცნიერების'), 'url_name': 'gsmp:about'},
+                         # {'title': _('საგარეო'), 'url_name': 'gsmp:about'},
+                         # {'title': _('მეცნიერების'), 'url_name': 'gsmp:about'},
                      ]},
-                     {'title': _('სამუშაო ჯგუფები'), 'url_name': 'gsmp:resources', 'submenu':[
-                         {'title': _('ონკოჰემატოლოგია'), 'url_name': 'gsmp:about'},
-                         {'title': _('ფარმაკოგენეტიკა'), 'url_name': 'gsmp:about'},
+                     {'title': _('სამუშაო ჯგუფები'), 'url_name': 'gsmp:about', 'submenu':[
+                         # {'title': _('ონკოჰემატოლოგია'), 'url_name': 'gsmp:about'},
+                         # {'title': _('ფარმაკოგენეტიკა'), 'url_name': 'gsmp:about'},
                      ]},
-                     {'title': _('GSMP სიახლები'), 'url_name': 'mp_news:newshome', 'submenu': [
+                     {'title': _('GSMP სიახლები'), 'url_name': 'gsmp:newsall', 'submenu': [
                          {'title': _('GSMP სიახლები'), 'url_name': 'gsmp:about'},
                          {'title': _('GSMP წლიური ანგარიში'), 'url_name': 'gsmp:about'},
                      ]},
