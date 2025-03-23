@@ -36,7 +36,7 @@ def generate_pdf(post):
     styles['Normal'].fontName = 'NotoSansGeorgian'
     styles['Normal'].encoding = 'UTF-8'
     story = []
-    # სურათის დამატება
+
     # სრული ფაილური სისტემის ბილიკის გამოყენება
     if post.photo and post.photo.url:
         image_path = os.path.join(settings.MEDIA_ROOT, post.photo.name)
